@@ -8,11 +8,11 @@ import { ParlourFirebaseService } from './service/parlour.firebase.service';
 })
 export class AppComponent {
   title = 'glamzone';
-
+  
      constructor(private parlourService : ParlourFirebaseService){
       //  this.parlourService.getParlourById('vOM0sWFzhe78WfJLsKkd');
       // this.parlourService.getParlourByTitleAndUserId('');
-      this.parlourService.getParlours();
+      // this.parlourService.getParlours();
       // this.parlourService.createParlour(null);
      }
 

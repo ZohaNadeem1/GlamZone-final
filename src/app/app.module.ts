@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +11,11 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { environement } from './environment';
 import { ParloursModule } from './pages/parlours/parlours.module';
 import { JobsModule } from './pages/jobs/jobs.module';
+import { AuthenticationModule } from './authentication/Authentication.module';
+import { FormsModule } from '@angular/forms';
 
+import { ChipsModule } from 'primeng/chips';
+import { MegaMenuModule } from 'primeng/megamenu';
 
 @NgModule({
   declarations: [
@@ -20,11 +25,16 @@ import { JobsModule } from './pages/jobs/jobs.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ParloursModule,
     JobsModule,
+    AuthenticationModule,
+    FormsModule,
     provideFirestore(() => getFirestore()),
     provideFirebaseApp(() => initializeApp(environement.firebase)),
+    ChipsModule,
+    MegaMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

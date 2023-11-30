@@ -6,15 +6,15 @@ import { JobManagementComponent } from './job-management/job-management.componen
 
 const routes: Routes = [
       {
-        path: 'jobs',
+        path: '',
         component: JobsComponent
       },
       {
-        path: 'job-details/:jobId',
+        path: 'details/:id',
         component: JobDetailsComponent
       },
       {
-        path: 'job-management',
+        path: 'management',
         component: JobManagementComponent,
         // canActivate: [true]
       }
