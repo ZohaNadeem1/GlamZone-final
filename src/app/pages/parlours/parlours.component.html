@@ -1,3 +1,21 @@
-<p>
-  parlours works!
-</p>
+<div class="container-fluid page-container">
+ 
+  <div class="row ms-auto p-1">
+    <div class="col-md-3 mx-2" style="border: 1px solid white">
+      Filter
+    </div>
+    <div class="col-md-8">
+      <h5 class="text-muted">PARLOURS ({{allParlours.length}})</h5>
+      <span class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. </span>
+      <hr/>
+      <ng-container *ngIf="allParlours.length > 0; else recordNotFound">
+        <ng-container *ngFor="let parlour of allParlours">
+           <app-parlour-card [parlourCardDetails]="parlour"></app-parlour-card>
+        </ng-container>
+      </ng-container>
+      <ng-template #recordNotFound>
+        <h5>Record not found</h5>
+      </ng-template>
+    </div>
+  </div>
+</div>

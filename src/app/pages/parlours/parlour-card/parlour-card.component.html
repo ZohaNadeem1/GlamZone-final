@@ -1,0 +1,16 @@
+<div class="container-fluid parlour-card">
+  <div class="row m-2" *ngIf="parlourCardDetails">
+    <div class="col-md-4 col-sm-12 col-lg-4 p-3">
+        <img class="img-fluid parlour-image p-1" [src]="parlourCardDetails.businessPicture" [alt]="parlourCardDetails.businessTitle">
+    </div>
+    <div class="col-md-8 col-sm-12 col-lg-8 p-3">
+      <h4 class="parlour-title">{{parlourCardDetails.businessTitle | uppercase}}</h4>
+      <span class="text-span">{{parlourCardDetails.businessSlogan | uppercase}} | </span>
+      <span class="text-span" > {{parlourCardDetails.businessContact != undefined ? "+92 " + parlourCardDetails.businessContact : 'Contact Not Avialable'}} </span>
+      <p class="text-paragraph">
+         {{parlourCardDetails.businessShortDescription != undefined ?  parlourCardDetails.businessShortDescription : 'Description Not Avialable From Parlour'}} 
+      </p>
+      <button class="btn btn-md btn-light float-end" routerLink="details/{{parlourCardDetails._id }}">VISIT US</button>
+    </div>
+  </div> 
+</div>

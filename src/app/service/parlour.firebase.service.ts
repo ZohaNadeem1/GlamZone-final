@@ -10,16 +10,16 @@ export class ParlourFirebaseService {
   constructor(private firestore: Firestore) { }
 
   async getParlours() : Promise<QuerySnapshot<DocumentData, DocumentData>> {
-    const queryRef =  query(collection(this.firestore, 'parlour'), orderBy('title'), limit(3))
+    const queryRef =  query(collection(this.firestore, 'parlour'), orderBy('businessTitle'), limit(3))
     return  await getDocs(queryRef);
   } 
   
-  async getParloursByPagination(start : number) : Promise<any> {
-    const queryRef =  query(collection(this.firestore, 'parlour'), orderBy('title'), startAfter(start), limit(3))
+  async getParloursByPagination(start : number) : Promise<any> { 
+    const queryRef =  query(collection(this.firestore, 'parlour'), orderBy('businessTitle'), startAfter(start), limit(3))
     return await getDocs(queryRef);
   } 
 
-   getParlourById(_id : string) : any {
+   getParlourById(_id : string | undefined) : any {
        const docRef =  doc(collection(this.firestore, 'parlour'), _id,);           
        return getDoc(docRef);
   }

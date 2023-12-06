@@ -16,10 +16,12 @@ import { FormsModule } from '@angular/forms';
 
 import { ChipsModule } from 'primeng/chips';
 import { MegaMenuModule } from 'primeng/megamenu';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
     SearchJobsPipe,
     SearchParloursPipe
   ],

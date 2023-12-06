@@ -6,12 +6,13 @@ export interface Parlour {
        businessSlogan?: string;
        coverPicture?: string;
        businessPicture?: string;
-       businessContact: string;
+       businessContact?: string;
        address?: string[];
        latitude?: string;
        longigtude?: string;
        gallaryPics?: string[];
        userId: string;
+       businessShortDescription?: string;
        bookings?: Booking[];
        isParlourActive?: boolean;
 }
