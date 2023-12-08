@@ -13,23 +13,24 @@ import { ParlourFirebaseService } from 'src/app/service/parlour.firebase.service
 export class ParlourDetailsComponent implements OnInit {
   parlourDetails ?: Parlour;
   parlourOfferingServices : Service[] = [];
+  selectedService ?: Service;
 
   constructor(private offeredService: OfferedService ,private activeRoute : ActivatedRoute) {
   
   }
 
+  getService(service : Service){
+        this.selectedService = service;
+        this.selectedService['parlour'] = this.parlourDetails;
+  }
   ngOnInit() {
      
   const data = this.activeRoute.snapshot.data['parlourDetails'];
   this.parlourDetails = data.data();
 
    this.offeredService.getServicesByParlourId(data.id).then(result => {
-    console.log(data.id);
         result.forEach((result : any) => this.parlourOfferingServices.push(result.data()));
    });
-
-
-  console.log(this.parlourDetails);
   
 }
 

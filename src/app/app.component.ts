@@ -15,5 +15,5 @@ export class AppComponent {
       // this.parlourService.getParlours();
       // this.parlourService.createParlour(null);
      }
-
+     date: Date[] | undefined;
 }

@@ -1,0 +1,25 @@
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: none;
+}
+input[pInputText]{
+    height: 30px;
+    width: 100%;
+    outline: none;
+    border-radius: 0% !important;
+    box-shadow: none;
+}
+
+  .booking-slot{
+    padding: 10px;
+    background-color: rgb(246, 246, 246);
+  }
+
+  :host ::ng-deep .p-button{
+    font-size:12px;
+    height: 20px;  
+  }
+
+  ul li {
+    font-size: 12px;
+  }

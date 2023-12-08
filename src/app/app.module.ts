@@ -14,9 +14,9 @@ import { JobsModule } from './pages/jobs/jobs.module';
 import { AuthenticationModule } from './authentication/Authentication.module';
 import { FormsModule } from '@angular/forms';
 
-import { ChipsModule } from 'primeng/chips';
-import { MegaMenuModule } from 'primeng/megamenu';
 import { HeaderComponent } from './components/header/header.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+
 
 @NgModule({
   declarations: [
@@ -33,10 +33,9 @@ import { HeaderComponent } from './components/header/header.component';
     JobsModule,
     AuthenticationModule,
     FormsModule,
+    GoogleMapsModule,
     provideFirestore(() => getFirestore()),
-    provideFirebaseApp(() => initializeApp(environement.firebase)),
-    ChipsModule,
-    MegaMenuModule
+    provideFirebaseApp(() => initializeApp(environement.firebase))
   ],
   providers: [],
   bootstrap: [AppComponent]

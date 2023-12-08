@@ -1,0 +1,57 @@
+<div class="modal fade" [id]="modalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{service?.parlour?.businessTitle | uppercase}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+                 <img class="img-fluid" [src]="service?.servicePicture">
+            </div>
+            <div class="col-md-8">
+              <p style="margin-bottom: -5px;">{{ service?.title | uppercase }}</p>
+              <p style="margin-bottom: -2px;" class="text-danger">DESCRIPTION</p>
+              <p style="font-size: 12px;">{{service?.description}}</p>
+              <ul>
+                <li>Price - {{ service?.price | currency : 'PKR '}}</li>
+                <li>Post Date -{{service?.serviceStartDate | firebaseTimestamp :'medium'}} </li>
+                <li>Offers - N/A</li>
+              </ul>
+            </div>
+          </div>
+          <div *ngIf="reserveService" class="booking-slot row">
+            <p class="text-primary text-center" style="margin-bottom: 30px;">PLEASE PROVIDE INFORMATION</p>
+            <div class="flex flex-row justify-content-center gap-3 mb-4">
+              <span class="p-float-label">
+                  <input pInputText id="username" [(ngModel)]="userName" />
+                  <label for="username">Username for contact</label>
+              </span>
+          </div>
+          <div class="flex flex-row justify-content-center gap-3 mb-4">
+            <span class="p-float-label">
+                <input pInputText id="username" [(ngModel)]="phoneNumber" />
+                <label for="username">Phone number for contact</label>
+            </span>
+        </div>
+        <div class="flex flex-row justify-content-center gap-3 mb-4">
+          <span class="p-float-label">
+            <textarea rows="2" style="width: 100%;" cols="30" pInputTextarea [autoResize]="true"></textarea>
+            <label for="float-input">Summary</label>
+        </span>
+        </div>
+        <div>
+          <p-button label="Book Now" [loading]="loading" (onClick)="load()"></p-button>
+        </div>
+           </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" (click)="reserveService = false" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+        <button *ngIf="!reserveService" type="button" (click)="showBookingDialog()" class="btn btn-danger">Book Now</button>
+      </div>
+    </div>
+  </div>
+</div>
