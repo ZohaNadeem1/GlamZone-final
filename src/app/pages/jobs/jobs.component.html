@@ -1,3 +1,17 @@
-<p>
-  jobs works!
-</p>
+<div class="container-fluid p-3">
+    <div class="row">
+    </div>
+    <div class="row p-1">
+      <div class="col-md-3 card p-1">
+        <app-job-side-filter></app-job-side-filter>
+      </div>
+      <div class="col-md-6">
+        <h6 class="text-muted">JOBS RESULT (0)</h6>
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+        <div *ngFor="let item of [1,2,3]" class="card mb-3">
+          <app-job-card></app-job-card>
+        </div>
+      </div>
+      <div class="col-md-3">3</div>
+    </div>
+</div>

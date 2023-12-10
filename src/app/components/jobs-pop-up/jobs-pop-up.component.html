@@ -1,0 +1,56 @@
+<div class="modal modal-xl fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">JOB DETAILS</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-5 p-3 m-3 bg-light">
+            <h5 class="card-title">Job Title </h5>
+            <p class="text-muted"> Job Location, abc,xyz,Mirpurkhas</p>
+            <p class="card-text">Job description, This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text">
+               <small class="text-muted">Posted 3 mins ago</small>
+               |<small class="text-muted">  Qualification No Required</small>
+               |<small class="text-danger">  Salary PKR. 1000</small>
+            </p>
+            <h5 class="card-title"><a routerLink="/parlours/details/123" id="company-title">Company Title</a></h5>
+            <p class="text-muted">  Company Location, abc,xyz,Mirpurkhas</p>
+            <p class="card-text">Company Description, this is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text">
+               <small class="text-muted">Contact  +92 300 00000</small>
+               |<small class="text-muted"> Contact Person Name Zoha Nadeem</small>
+            </p>
+          </div>
+          <div class="col-md-6 p-3 m-3 bg-white">
+            <h6 class="text-muted">APPLY HERE</h6>
+            <span style="font-size:12px" class="text-muted">Kindly, provide the required details for this current job. We will contact you once shortlisted.</span>
+            <div class="p-5 mt-4 bg-light">
+              <span class="p-float-label">
+                <input style="width: 100%;" pInputText id="firstname"  />
+                <label for="firstname">First Name</label>
+              </span>
+              <span class="p-float-label mt-4">
+                <input style="width: 100%;" pInputText id="lastname"  />
+                <label for="lastname">Last Name</label>
+              </span>
+              <span class="p-float-label mt-4">
+                <input style="width: 100%;" pInputText id="contact"  />
+                <label for="contact">Contact Number</label>
+              </span>
+              <span style="width:100%" class="p-float-label mt-4">
+                <p-chips [max]="3" separator="," placeholder="Qualifications Hint: a, b, c"></p-chips>
+              </span>
+   
+            </div>
+          </div>
+        </div>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
