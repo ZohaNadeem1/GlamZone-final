@@ -17,6 +17,10 @@ import { CarouselModule } from 'primeng/carousel';
 import { TagModule } from 'primeng/tag';
 import { TabViewModule } from 'primeng/tabview';
 import { TabsComponent } from 'src/app/components/tabs/tabs.component';
+import { TooltipModule } from 'primeng/tooltip';
+import { ScrollTopModule } from 'primeng/scrolltop';
+import { SearchParloursPipe } from 'src/app/pipes/search-parlours.pipe';
+
 
 @NgModule({
   imports: [
@@ -29,10 +33,12 @@ import { TabsComponent } from 'src/app/components/tabs/tabs.component';
     InputTextareaModule,
     CarouselModule,
     TagModule,
-    TabViewModule
+    ScrollTopModule,
+    TabViewModule,
+    TooltipModule
   ],
   providers: [ParloursResolver, ParloursDetailsResolver, DatePipe],
   declarations: [ParloursComponent, ParlourCardComponent,SliderComponent,
-    TabsComponent, PopUpComponent, ParlourDetailsComponent, FirebaseTimestampPipe]
+    TabsComponent, PopUpComponent, ParlourDetailsComponent, FirebaseTimestampPipe, SearchParloursPipe]
 })
 export class ParloursModule { }

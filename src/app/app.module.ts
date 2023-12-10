@@ -22,8 +22,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
   declarations: [
     AppComponent,
     HeaderComponent,
-    SearchJobsPipe,
-    SearchParloursPipe
+    SearchJobsPipe
   ],
   imports: [
     BrowserModule,

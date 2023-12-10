@@ -26,19 +26,19 @@
             <p class="text-primary text-center" style="margin-bottom: 30px;">PLEASE PROVIDE INFORMATION</p>
             <div class="flex flex-row justify-content-center gap-3 mb-4">
               <span class="p-float-label">
-                  <input pInputText id="username" [(ngModel)]="userName" />
+                  <input pInputText pTooltip="Enter your username" id="username" [(ngModel)]="userName" />
                   <label for="username">Username for contact</label>
               </span>
           </div>
           <div class="flex flex-row justify-content-center gap-3 mb-4">
             <span class="p-float-label">
-                <input pInputText id="username" [(ngModel)]="phoneNumber" />
-                <label for="username">Phone number for contact</label>
+                <input pInputText pTooltip="Enter your contact number" id="phonenumber" [(ngModel)]="phoneNumber" />
+                <label for="phonenumber">Phone number for contact</label>
             </span>
         </div>
         <div class="flex flex-row justify-content-center gap-3 mb-4">
           <span class="p-float-label">
-            <textarea rows="2" style="width: 100%;" cols="30" pInputTextarea [autoResize]="true"></textarea>
+            <textarea rows="2" pTooltip="Enter your message for further information"  style="width: 100%;" cols="30" pInputTextarea [autoResize]="true"></textarea>
             <label for="float-input">Summary</label>
         </span>
         </div>

@@ -5,13 +5,21 @@
       Filter
     </div>
     <div class="col-md-8">
-      <h5 class="text-muted">PARLOURS ({{allParlours.length}})</h5>
+      <h5 class="text-muted" #parlourCount>PARLOURS RESULTS ({{totalSize$ | async}})</h5>
       <span class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. </span>
       <hr/>
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input style="width: 100%;" type="text" placeholder="Search parlour by title or contact..." pInputText #searchParlour/>
+      </span>
       <ng-container *ngIf="allParlours.length > 0; else recordNotFound">
-        <ng-container *ngFor="let parlour of allParlours">
-           <app-parlour-card [parlourCardDetails]="parlour"></app-parlour-card>
+        <ng-container *ngFor="let parlour of allParlours | searchParlours: searchParlour.value">
+           <app-parlour-card *ngIf="parlour.message == undefined; else recordNotFound" [parlourCardDetails]="parlour"></app-parlour-card>
         </ng-container>
+        <div *ngIf="loadMoreBtn" class="flex justify-content-center">
+             <p-button id="load-more-btn" label="Load More" [loading]="loading" (onClick)="load()"></p-button>
+        </div>
+        <p *ngIf="hasNoMoreItems" class="text-center text-danger">NO MORE ITEMS</p>
       </ng-container>
       <ng-template #recordNotFound>
         <h5>Record not found</h5>
