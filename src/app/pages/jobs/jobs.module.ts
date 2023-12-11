@@ -8,6 +8,9 @@ import { JobsPopUpComponent } from 'src/app/components/jobs-pop-up/jobs-pop-up.c
 import { FieldsetModule } from 'primeng/fieldset';
 import { InputTextModule } from 'primeng/inputtext';
 import { ChipsModule } from 'primeng/chips';
+import { KeyFilterModule } from 'primeng/keyfilter';
+import { ButtonModule } from 'primeng/button';
+import { FileUploadModule } from 'primeng/fileupload';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { ChipsModule } from 'primeng/chips';
     JobRoutingModule,
     FieldsetModule,
     InputTextModule,
-    ChipsModule
+    ChipsModule,
+    KeyFilterModule,
+    ButtonModule,
+    FileUploadModule
   ],
   declarations: [JobsComponent, JobSideFilterComponent, JobCardComponent, JobsPopUpComponent]
 })

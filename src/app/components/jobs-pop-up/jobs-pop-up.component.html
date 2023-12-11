@@ -29,7 +29,8 @@
           <div class="col-md-6 p-3 m-3 bg-white">
             <h6 class="text-muted">APPLY HERE</h6>
             <span style="font-size:12px" class="text-muted">Kindly, provide the required details for this current job. We will contact you once shortlisted.</span>
-            <div class="p-5 mt-4 bg-light">
+            <div class="p-3 mt-4 bg-light">
+              <h6 class="text-muted text-center">INDIVIDUAL INFORMATION</h6>
               <span class="p-float-label">
                 <input style="width: 100%;" pInputText id="firstname"  />
                 <label for="firstname">First Name</label>
@@ -39,13 +40,20 @@
                 <label for="lastname">Last Name</label>
               </span>
               <span class="p-float-label mt-4">
-                <input style="width: 100%;" pInputText id="contact"  />
+                <input style="width: 100%;" pInputText id="contact" pKeyFilter="int" />
                 <label for="contact">Contact Number</label>
               </span>
-              <span style="width:100%" class="p-float-label mt-4">
-                <p-chips [max]="3" separator="," placeholder="Qualifications Hint: a, b, c"></p-chips>
+              <span class="p-float-label mt-4 mb-2">
+                <textarea id="float-input" rows="2" cols="30" style="width: 100%;" pInputTextarea></textarea>
+                <label for="float-input">Describe Experience</label>
               </span>
-   
+              <span class="p-float-label mt-4 mb-2">
+                <p-chips [style]="{'width':'100%'}" [max]="3" separator="," placeholder="Qualifications Hint: a, b, c"></p-chips>
+              </span>
+              <div class="flex justify-content-center">
+                <p-fileUpload [class]="'uploader'" mode="basic" chooseLabel="UPLOAD RESUME" name="demo[]"  accept=".pdf" [maxFileSize]="1000000" ></p-fileUpload>
+            </div>
+              <p-button class="p-button" label="APPLY" [loading]="loading" (onClick)="load()"></p-button>
             </div>
           </div>
         </div>

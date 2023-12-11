@@ -1,0 +1,6 @@
+:host ::ng-deep .p-button {
+    height: 10px;
+    font-size: 12px;
+    background-color: red;
+    border: none;
+}

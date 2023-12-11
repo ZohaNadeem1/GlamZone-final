@@ -23,3 +23,7 @@ input[pInputText]{
   ul li {
     font-size: 12px;
   }
+
+  p-datepicker{
+  height: 10px;
+}

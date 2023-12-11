@@ -2,19 +2,29 @@
     text-decoration: none;
 }
 
-input[type="text"]:focus {
-    outline: none;
-    box-shadow: none;
-}
-
-p-chips{
-    width: 100%;
-}
-
-input[pInputText]{
+input[pInputText] , ::ng-deep  .p-chips-multiple-container{
     height: 30px;
     width: 100%;
     outline: none;
     border-radius: 0% !important;
     box-shadow: none;
+}
+
+.p-button{
+    height: 10px;
+    border-radius: 0px;
+}
+
+:host ::ng-deep .p-fileupload-choose {
+    height: 10px;
+    width: 100%;
+    background-color: rgb(33, 204, 33);
+    border: none;
+    border-radius: 0px;
+    margin-bottom: 10px;
+}
+
+::ng-deep  .p-chips-multiple-container{
+  padding:0px;
+  padding-left: 10px;
 }

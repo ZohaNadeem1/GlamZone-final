@@ -5,13 +5,15 @@
       <div class="col-md-3 card p-1">
         <app-job-side-filter></app-job-side-filter>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-9">
         <h6 class="text-muted">JOBS RESULT (0)</h6>
         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
         <div *ngFor="let item of [1,2,3]" class="card mb-3">
           <app-job-card></app-job-card>
         </div>
+        <div class="mx-auto">
+          <p-button label="LOAD MORE JOBS" [loading]="loading" (onClick)="load()"></p-button>
+        </div>
       </div>
-      <div class="col-md-3">3</div>
     </div>
 </div>

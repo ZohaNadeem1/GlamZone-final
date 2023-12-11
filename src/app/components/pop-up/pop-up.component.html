@@ -36,6 +36,9 @@
                 <label for="phonenumber">Phone number for contact</label>
             </span>
         </div>
+        <div class="flex flex-row justify-content-center gap-3 mb-4">  
+          <p-calendar [style]="{'width':'100%', 'height':'24px'}" placeholder="Select Booking Date and Time"  [showIcon]="true" [(ngModel)]="date" [showTime]="true" [showSeconds]="true"></p-calendar>
+        </div>
         <div class="flex flex-row justify-content-center gap-3 mb-4">
           <span class="p-float-label">
             <textarea rows="2" pTooltip="Enter your message for further information"  style="width: 100%;" cols="30" pInputTextarea [autoResize]="true"></textarea>

@@ -12,4 +12,14 @@ export class JobsPopUpComponent implements OnInit {
   ngOnInit() {
   }
 
+  loading: boolean = false;
+
+  load() {
+      this.loading = true;
+
+      setTimeout(() => {
+          this.loading = false
+      }, 2000);
+  }
+
 }
