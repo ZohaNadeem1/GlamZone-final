@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 
 import { HeaderComponent } from './components/header/header.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { ProfileModule } from './pages/profile/profile.module';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
     AppRoutingModule,
     ParloursModule,
     JobsModule,
+    ProfileModule,
     AuthenticationModule,
     FormsModule,
     GoogleMapsModule,

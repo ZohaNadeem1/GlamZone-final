@@ -21,6 +21,10 @@ const routes: Routes = [
           loadChildren: () => import('./authentication/Authentication.module').then(m => m.AuthenticationModule)
         },
         {
+          path: 'profile',
+          loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfileModule)
+        },
+        {
           path: '**',
           component: ErrorComponent,
           pathMatch:'full'

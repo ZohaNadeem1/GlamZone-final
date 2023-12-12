@@ -1,0 +1,22 @@
+.profile-user-text{
+    margin-top: -8px;
+    font-size: 12px;
+}
+
+.avatar-container {
+    display: flex;
+    align-items: center;
+}
+
+.custom-avatar {
+    width: 50px; /* Adjust the width and height according to your design */
+    height: 50px;
+    position: relative;
+    top: -4px;
+    font-size: 24px; /* Adjust the font size */
+  }
+  
+  .side-text {
+    margin-left: 10px; /* Adjust the margin as needed */
+    font-size: 18px; /* Adjust the font size */
+  }

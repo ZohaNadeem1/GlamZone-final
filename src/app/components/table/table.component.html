@@ -1,0 +1,30 @@
+<div class="card">
+  <p-table 
+      [value]="data"
+      [paginator]="true"
+      [rows]="5"
+      [showCurrentPageReport]="true"
+      [tableStyle]="{ 'min-width': '50rem', 'font-size':'12px'}"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+      (onPage)="pageChange($event)"
+      [rowsPerPageOptions]="[10, 25, 50]">
+      <ng-template pTemplate="header">
+          <tr>
+                 <th *ngFor="let column of columns" [style]="column.style">{{column.name}}</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-customer>
+          <tr>
+              <td>{{ customer }}</td>
+              <td style="text-align: center;">{{ customer }}</td>
+              <td style="text-align: center;">{{ customer }}</td>
+              <td style="text-align: center;">{{ customer }}</td>
+              <td >
+                <p-button (click)="viewCurrentRecords(444)"  label="Details" [text]="true"></p-button>
+                <p-button (click)="updateCurrentRecords(555)" label="Update" [text]="true"></p-button>
+                <p-button icon="pi pi-times" (click)="deleteCurrentRecords(666)"  label="Delete" [text]="true"></p-button>
+              </td>
+          </tr>
+        </ng-template>
+      </p-table>
+</div>

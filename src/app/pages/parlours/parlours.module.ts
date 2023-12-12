@@ -38,7 +38,7 @@ import { SearchParloursPipe } from 'src/app/pipes/search-parlours.pipe';
     TooltipModule
   ],
   providers: [ParloursResolver, ParloursDetailsResolver, DatePipe],
-  declarations: [ParloursComponent, ParlourCardComponent,SliderComponent,
+  declarations: [ParloursComponent, ParlourCardComponent,SliderComponent, 
     TabsComponent, PopUpComponent, ParlourDetailsComponent, FirebaseTimestampPipe, SearchParloursPipe]
 })
 export class ParloursModule { }

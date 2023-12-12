@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <app-profile-side></app-profile-side>
+      <div class="card p-3 m-3" style="width: 90%;border-radius: 0px;">
+        <div class="avatar-container">
+          <p-avatar class="custom-avatar" image="https://primefaces.org/cdn/primeng/images/demo/avatar/onyamalimba.png"
+            styleClass="mr-2" size="large" shape="circle"></p-avatar>
+          <div class="side-text">
+            <p class="text-danger" style="font-size: 14px;">{{ 'saeed ahmed sheikh' | uppercase }}</p>
+            <p style="font-size: 11px; margin-top:-20px;">Contact +92 314 0000000</p>
+            <p style="font-size: 11px; margin-top:-18px;">Email saeed@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 p-3">
+      <div class="">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

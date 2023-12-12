@@ -1,0 +1,9 @@
+:host ::ng-deep .p-panelmenu .p-menuitem-link  {
+    text-decoration: none;
+}
+
+:host ::ng-deep  .p-menuitem-link-active{
+    text-decoration: none;
+}
+  
+  
