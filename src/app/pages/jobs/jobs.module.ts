@@ -24,6 +24,7 @@ import { FileUploadModule } from 'primeng/fileupload';
     ButtonModule,
     FileUploadModule
   ],
+  exports: [JobCardComponent],
   declarations: [JobsComponent, JobSideFilterComponent, JobCardComponent, JobsPopUpComponent]
 })
 export class JobsModule { }

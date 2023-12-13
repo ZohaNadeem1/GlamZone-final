@@ -20,6 +20,9 @@ import { TabsComponent } from 'src/app/components/tabs/tabs.component';
 import { TooltipModule } from 'primeng/tooltip';
 import { ScrollTopModule } from 'primeng/scrolltop';
 import { SearchParloursPipe } from 'src/app/pipes/search-parlours.pipe';
+import { CardModule } from 'primeng/card';
+import { ImageModule } from 'primeng/image';
+import { JobsModule } from '../jobs/jobs.module';
 
 
 @NgModule({
@@ -35,10 +38,13 @@ import { SearchParloursPipe } from 'src/app/pipes/search-parlours.pipe';
     TagModule,
     ScrollTopModule,
     TabViewModule,
-    TooltipModule
+    TooltipModule,
+    CardModule,
+    ImageModule,
+    JobsModule
   ],
   providers: [ParloursResolver, ParloursDetailsResolver, DatePipe],
-  declarations: [ParloursComponent, ParlourCardComponent,SliderComponent, 
+  declarations: [ParloursComponent, ParlourCardComponent,SliderComponent,
     TabsComponent, PopUpComponent, ParlourDetailsComponent, FirebaseTimestampPipe, SearchParloursPipe]
 })
 export class ParloursModule { }

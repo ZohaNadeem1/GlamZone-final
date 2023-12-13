@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { ProfileModule } from './pages/profile/profile.module';
+import { JobCardComponent } from './pages/jobs/job-card/job-card.component';
 
 
 @NgModule({
