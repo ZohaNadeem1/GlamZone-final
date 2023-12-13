@@ -23,6 +23,7 @@ import { SearchParloursPipe } from 'src/app/pipes/search-parlours.pipe';
 import { CardModule } from 'primeng/card';
 import { ImageModule } from 'primeng/image';
 import { JobsModule } from '../jobs/jobs.module';
+import { ParlourSideFilterComponent } from 'src/app/components/parlour-side-filter/parlour-side-filter.component';
 
 
 @NgModule({
@@ -44,7 +45,7 @@ import { JobsModule } from '../jobs/jobs.module';
     JobsModule
   ],
   providers: [ParloursResolver, ParloursDetailsResolver, DatePipe],
-  declarations: [ParloursComponent, ParlourCardComponent,SliderComponent,
+  declarations: [ParloursComponent, ParlourCardComponent,SliderComponent, ParlourSideFilterComponent,
     TabsComponent, PopUpComponent, ParlourDetailsComponent, FirebaseTimestampPipe, SearchParloursPipe]
 })
 export class ParloursModule { }

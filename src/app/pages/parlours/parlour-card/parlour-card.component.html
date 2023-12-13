@@ -1,7 +1,7 @@
-<div class="container-fluid parlour-card">
+<div class="container-fluid parlour-card card mb-3">
   <div class="row m-2" *ngIf="parlourCardDetails">
-    <div class="col-md-4 col-sm-12 col-lg-4 p-3">
-        <img class="img-fluid parlour-image p-1" [src]="parlourCardDetails.businessPicture" [alt]="parlourCardDetails.businessTitle">
+    <div class="col-md-4 col-sm-12 col-lg-4 p-1">
+        <p-image class="img-fluid parlour-image p-1" [preview]="true" width="100%" height="100%" [src]="parlourCardDetails.businessPicture" [alt]="parlourCardDetails.businessTitle" />
     </div>
     <div class="col-md-8 col-sm-12 col-lg-8 p-3">
       <h4 class="parlour-title">{{parlourCardDetails.businessTitle | uppercase}}</h4>

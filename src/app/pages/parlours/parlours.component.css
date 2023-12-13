@@ -1,0 +1,7 @@
+input[pInputText]{
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border-radius: 0% !important;
+    box-shadow: none;
+}
