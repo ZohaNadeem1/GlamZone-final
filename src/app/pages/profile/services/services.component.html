@@ -3,5 +3,5 @@
       <app-table (deleteRecord)="deleteCurrentRecord($event)" (updateRecord)="updateCurrentRecord($event)" (viewRecord)="viewCurrentRecord($event)" [columns]="jobsTable"></app-table>
   </div>
 </div>
-<app-dialog-box></app-dialog-box>
+<app-dialog-box [viewDetails]="viewDetails"></app-dialog-box>
 <app-confirmation></app-confirmation> 

@@ -1,13 +1,26 @@
-<p-dialog header="SERVICE TITLE" [(visible)]="visible" (onHide)="visible = false" [style]="{width: '50vw'}"  [maximizable]="true">
-  <div class="container-fluid">
+<p-dialog header="{{title}}" [(visible)]="visible" (onHide)="visible = false" [style]="{width: '50vw', 'font-size':'12px'}"  [maximizable]="true">
+  <div *ngIf="viewDetails" class="container-fluid">
     <div class="row">
-      <div class="col-md-4">
-        
+      <div class="col-md-5">
+        <app-slider></app-slider>
+      </div>
+      <div class="col-md-7 p-3 bg-light">
+        <h6 class="text-danger mb-0">{{ 'Service Title' }}</h6>
+        <span style="margin-top: -10px;">Status {{ 'Active'}}</span>  
+        <p>PRICE {{ '1200' | currency: ' PKR '}}</p>
+        <p class="mt-0"> Category 
+                    <p-tag  [style]="{'margin':'1px','height':'12px','font-size':'10px', 'border-radius': '0px'}" value="New"></p-tag>
+                    <p-tag  [style]="{'margin':'1px','height':'12px','font-size':'10px', 'border-radius': '0px'}" value="New"></p-tag>
+                    <p-tag  [style]="{'margin':'1px','height':'12px','font-size':'10px', 'border-radius': '0px'}" value="New"></p-tag>
+        </p>
+        <div class="bg-white m-1 p-3">
+          <p>Description, {{ '  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, blanditiis commodi? Quam ad harum, explicabo natus, odit voluptatum consequuntur neque ea, fugiat voluptas delectus itaque culpa fuga excepturi vero nulla.' }}</p>
+          <p> {{ '  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, blanditiis commodi? Quam ad harum, explicabo natus, odit voluptatum consequuntur neque ea, fugiat voluptas delectus itaque culpa fuga excepturi vero nulla.' }}</p>
+        </div>
+        <div class="flex">
+          <p-button class="mt-3 float-end" size="small" [style]="{'height':'10px'}" saverity="danger" label="BOOKINGS" [loading]="loading" (onClick)="load()"></p-button>
+          </div>
       </div>
     </div>
   </div>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
 </p-dialog>

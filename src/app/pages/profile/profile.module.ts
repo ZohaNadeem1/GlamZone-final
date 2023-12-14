@@ -23,7 +23,8 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationComponent } from 'src/app/components/confirmation/confirmation.component';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
-import { SliderComponent } from 'src/app/components/slider/slider.component';
+import { ParloursModule } from '../parlours/parlours.module';
+import { TagModule } from 'primeng/tag';
 
 @NgModule({
   imports: [
@@ -39,7 +40,9 @@ import { SliderComponent } from 'src/app/components/slider/slider.component';
     AvatarGroupModule,
     ChartModule,
     ToastModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    ParloursModule,
+    TagModule
   ],
   declarations: [ProfileComponent,ProfileInfoComponent, ProfileSideComponent, ServicesComponent, 
                  JobsComponent, TableComponent, DialogBoxComponent, DashboardPieChartComponent, DashboardMultiAxisComponent,

@@ -44,6 +44,7 @@ import { ParlourSideFilterComponent } from 'src/app/components/parlour-side-filt
     ImageModule,
     JobsModule
   ],
+  exports: [SliderComponent],
   providers: [ParloursResolver, ParloursDetailsResolver, DatePipe],
   declarations: [ParloursComponent, ParlourCardComponent,SliderComponent, ParlourSideFilterComponent,
     TabsComponent, PopUpComponent, ParlourDetailsComponent, FirebaseTimestampPipe, SearchParloursPipe]

@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { MenuItem, MessageService } from 'primeng/api';
 import { SharedService } from 'src/app/shared/Shared.service';
 
 @Component({
@@ -9,18 +10,31 @@ import { SharedService } from 'src/app/shared/Shared.service';
 })
 export class DialogBoxComponent implements OnInit {
   
+  @Input() viewDetails ?: boolean = false;
   visible = false;
-  
-  constructor(private cdr: ChangeDetectorRef) { }
-    
-  ngOnInit() {
-    
+  loading: boolean = false;
+  title ?: string;
+   
+  constructor(private cdr: ChangeDetectorRef, private messageService: MessageService) {
   }
+  
+  ngOnInit() {
+    this.title = this.viewDetails ? 'View Service Details' : 'Update Service';
+  }
+  save(severity: string) {
+    this.messageService.add({ severity: severity, summary: 'Success', detail: 'Data Saved' });
+}
 
    toogleDialog(){
      this.visible = !this.visible;
      this.cdr.detectChanges();
    }
-    
+   load() {
+    this.loading = true;
+
+    setTimeout(() => {
+        this.loading = false
+    }, 2000);
+} 
   
 }
