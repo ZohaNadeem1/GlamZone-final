@@ -14,7 +14,7 @@ export class ServicesComponent implements OnInit {
     @ViewChild(ConfirmationComponent) confirmationComponent ?: ConfirmationComponent;
     @ViewChild(DialogBoxComponent) dialogBoxComponent ?: DialogBoxComponent;
 
-    viewDetails ?: boolean = false;
+    viewDetail ?: boolean = false;
 
     jobsTable = [{
       name: 'Service Title',
@@ -45,7 +45,7 @@ export class ServicesComponent implements OnInit {
     constructor(private shareService : SharedService){}
 
     viewCurrentRecord(event: any) {
-      this.viewDetails = true;
+      this.viewDetail = true;
       this.dialogBoxComponent?.toogleDialog();
       console.log('HERE ', event);
     }

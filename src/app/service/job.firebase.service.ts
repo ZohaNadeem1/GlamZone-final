@@ -1,14 +1,34 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Job } from '../model/job.model';
+import { Firestore, collection, query, where, getDocs } from '@angular/fire/firestore';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class JobFirebaseService {
+export class JobFirebaseService implements OnInit {
 
-      constructor() { }
+      collectionRef ?: any;
+      
+      constructor(private firestore : Firestore) { 
 
-      getJobs() : any {} 
+        this.collectionRef = collection(this.firestore, 'jobs');
+      }
+
+      ngOnInit(): void {
+      }
+ 
+      async getJobs(parlourId : string | undefined  = undefined) : Promise<any> {
+           if(parlourId != undefined){   
+              const queryRefByParlourId = query(this.collectionRef, where('parlourId','==', parlourId), where('isJobActive', '==', true));
+              const docRefs = await getDocs(queryRefByParlourId);
+              return docRefs;
+           }
+           else{
+              const docRefs = await getDocs(this.collectionRef);
+              return docRefs;
+           }
+      } 
 
       getJobById(_id : string) : any {}
 

@@ -25,6 +25,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { ParloursModule } from '../parlours/parlours.module';
 import { TagModule } from 'primeng/tag';
+import { JobsResolver } from 'src/app/resolver/jobs.resolver';
 
 @NgModule({
   imports: [
@@ -47,7 +48,7 @@ import { TagModule } from 'primeng/tag';
   declarations: [ProfileComponent,ProfileInfoComponent, ProfileSideComponent, ServicesComponent, 
                  JobsComponent, TableComponent, DialogBoxComponent, DashboardPieChartComponent, DashboardMultiAxisComponent,
                  DashboardPolarComponent, ConfirmationComponent],
-  providers:    [ConfirmationService, MessageService]
+  providers:    [ConfirmationService, MessageService, JobsResolver]
 
 })
 export class ProfileModule { }

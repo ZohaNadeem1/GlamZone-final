@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { ConfirmDialog } from 'primeng/confirmdialog';
 import { ConfirmationComponent } from '../confirmation/confirmation.component';
+import { JobFirebaseService } from 'src/app/service/job.firebase.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-table',
@@ -9,18 +11,22 @@ import { ConfirmationComponent } from '../confirmation/confirmation.component';
 })
 export class TableComponent implements OnInit{
 
-  data ?: any = [1,2,3];
-  @Input() columns ?: {name: string, style: string}[];
+  data ?: any = [];
   sizes ?: { name: string; class: string; }[];
+
+  @Input() viewType ?: string;
+  @Input() columns ?: {name: string, style: string}[];
 
   @Output() viewRecord = new EventEmitter();
   @Output() updateRecord = new EventEmitter();
   @Output() deleteRecord = new EventEmitter();
 
+
   first = 0;
   rows = 10;
 
-  constructor() { }
+  constructor(private route : ActivatedRoute) { 
+  }
 
   ngOnInit() {
       this.sizes = [
@@ -28,6 +34,14 @@ export class TableComponent implements OnInit{
         { name: 'Normal', class: '' },
         { name: 'Large',  class: 'p-datatable-lg' }
     ];
+    if(this.viewType == 'jobs'){
+      const results = this.route.snapshot.data['jobsData'];
+      results.forEach((result : any) => {
+        this.data.push(result.data());
+        console.log(result.data());
+      });  
+    }
+     
   }
 
   next() {
