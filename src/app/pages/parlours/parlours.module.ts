@@ -42,7 +42,8 @@ import { ParlourSideFilterComponent } from 'src/app/components/parlour-side-filt
     TooltipModule,
     CardModule,
     ImageModule,
-    JobsModule
+    JobsModule,
+    
   ],
   exports: [SliderComponent],
   providers: [ParloursResolver, ParloursDetailsResolver, DatePipe],

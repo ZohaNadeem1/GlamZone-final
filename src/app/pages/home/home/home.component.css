@@ -1,0 +1,30 @@
+img{
+    float: left;
+    /* transform: -50px; */
+    stroke: black;
+  
+    
+}
+#Welcome{
+    color: darkorange;
+    font-weight: bold;
+}
+#heading{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+} 
+div #slogan{
+   text-align: center;
+   border: 2px solid black;
+   width: 450px;
+   margin-top: 00px;
+  
+}
+#banner{
+    background: linear-gradient(to right, #A2B3BF 60%, #1E2C30 50%);
+}
+#image{
+border-right: 5px solid white;
+position: sticky;
+
+}
