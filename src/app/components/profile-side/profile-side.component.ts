@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { AddJobComponent } from '../add-job/add-job.component';
 import { AddServiceComponent } from '../add-service/add-service.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-side',
@@ -15,9 +16,10 @@ export class ProfileSideComponent implements OnInit {
   @ViewChild(AddJobComponent) addJobComponent ?: AddJobComponent;
   @ViewChild(AddServiceComponent) addServiceComponent ?: AddServiceComponent;
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit() {
+    const profile : any = localStorage.getItem('profile'); 
     this.items = [
        {
            label: 'Dashboard',
@@ -37,7 +39,8 @@ export class ProfileSideComponent implements OnInit {
                {
                    label: 'Edit Profile',
                    icon: 'pi pi-fw pi-user-edit',
-                   routerLink: ['edit']
+                   command : () => { this.router.navigate(['profile/edit', '123']) }
+                //    routerLink: ['edit']
                }
            ]
        },

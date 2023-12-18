@@ -33,6 +33,7 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { CalendarModule } from 'primeng/calendar';
 import { AddJobComponent } from 'src/app/components/add-job/add-job.component';
 import { ViewProfileComponent } from './view-profile/view-profile.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 @NgModule({
   imports: [
@@ -57,7 +58,7 @@ import { ViewProfileComponent } from './view-profile/view-profile.component';
     FileUploadModule
   ],
   declarations: [ProfileComponent,ProfileInfoComponent, ProfileSideComponent, ServicesComponent, ViewProfileComponent,
-                 JobsComponent, TableComponent, DialogBoxComponent, DashboardPieChartComponent, DashboardMultiAxisComponent,
+                 EditProfileComponent,JobsComponent, TableComponent, DialogBoxComponent, DashboardPieChartComponent, DashboardMultiAxisComponent,
                  DashboardPolarComponent, ConfirmationComponent, AddJobComponent, AddServiceComponent],
   providers:    [ConfirmationService, MessageService, JobsResolver]
 

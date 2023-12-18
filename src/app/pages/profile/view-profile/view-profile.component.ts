@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-profile',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route : Router) { }
 
   ngOnInit() {
+  }
+
+  editProfile(){
+      this.route.navigate(['profile/edit', 123])
   }
 
 }
