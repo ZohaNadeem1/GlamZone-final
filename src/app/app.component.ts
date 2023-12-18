@@ -7,7 +7,9 @@ import { ParlourFirebaseService } from './service/parlour.firebase.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'glamzone';
+    title = 'glamzone';
+
+    text ?: string;
   
      constructor(private parlourService : ParlourFirebaseService){
       //  this.parlourService.getParlourById('vOM0sWFzhe78WfJLsKkd');

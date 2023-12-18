@@ -58,4 +58,7 @@ export class ServicesComponent implements OnInit {
     updateCurrentRecord(event: any) {
       console.log('HERE ', event);
     }
+
+
+    
 }

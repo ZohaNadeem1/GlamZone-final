@@ -1,0 +1,47 @@
+<div class="card flex justify-content-center">
+  <p-dialog header="ADD JOB" (onHide)="clear()" [(visible)]="visible" [style]="{width: '50vw'}">
+    <div class="container">
+      <div class="row">
+        <h6 class="text-muted text-center">ADD A NEW JOB FOR YOUR PARLOUR</h6>
+        <div class="col-md-12 bg-light p-3  mb-1">
+          <div class="flex flex-column gap-2">
+            <label style="font-size: 12px;" for="username">JOB TITLE</label>
+            <input pInputText placeholder="ADD JOB TITLE" id='job-title' aria-describedby="username-help" />
+          </div>
+          <div class="flex flex-wrap gap-3 p-fluid mb-1">
+            <div class="flex-auto">
+              <label style="font-size: 12px;" class="font-bold block" for="job-salary">JOB SALARY</label>
+              <p-inputNumber [autofocus]="false" id="job-salary" [style]="{'border-radius':'0px','height': '12px','font-size': '12px'}"
+               placeholder="Job Salary" inputId="currency-us" mode="currency" currency="PKR" locale="en-US"> </p-inputNumber>
+            </div>
+          </div>
+          <div class="flex flex-wrap  p-fluid">
+            <div class="flex-auto">
+              <p style="font-size: 12px;" class="mt-2" for="job-salary">JOB DESCRIPTION</p>
+              <textarea  style="width: 100%; margin-top:-12px" rows="3" placeholder="Job description" [maxLength]="100" [autocapitalize]="true" cols="30" pInputTextarea ></textarea>
+            </div>
+          </div>
+          <h6 class="text-muted" style="font-size: 12px;">JOB QUALIFICATION</h6>
+          <div class="flex p-fluid">
+            <div class="flex-auto">
+              <div class="card gap-1 mt-1 p-2" style="border:1px solid black">
+                <p-checkbox name="jobQualification"  value="Not Required" label="Not Required"></p-checkbox>
+                <p-checkbox name="jobQualification"  value="Matric" label="Matric"></p-checkbox>
+                <p-checkbox name="jobQualification"  value="Intermediate" label="Intermediate"></p-checkbox>
+                <p-checkbox name="jobQualification"  value="Diploma" label="Diploma"></p-checkbox>
+                <p-checkbox name="jobQualification"  value="Graduation" label="Graduation"></p-checkbox>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-content-center mt-1 mb-2">
+                <h6 style="font-size: 12px;" class="text-muted" style="font-size: 12px;">VALID TILL DATE</h6>
+                <p-calendar [style]="{'width': '100%'}" placeholder="Select a valid till date" dateFormat="dd.mm.yy"></p-calendar>
+        </div>
+        <div class="d-flex justify-content-center">
+          <p-button [style]="{'height': '10px'}" size="small" label="ADD JOB" [loading]="loading" (onClick)="load()"></p-button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </p-dialog>
+</div>

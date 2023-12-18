@@ -1,0 +1,48 @@
+<div class="card flex justify-content-center">
+  <p-dialog header="ADD SERVICE" (onHide)="clear()" [(visible)]="visible" [style]="{width: '50vw'}">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 p-3 bg-light">
+          <div class="flex flex-column gap-2">
+            <label style="font-size: 12px;" for="username">SERVICE TITLE</label>
+            <input style="border: 1px solid black;" pInputText placeholder="ADD SERVICE TITLE" id='service-title' aria-describedby="service-help" />
+          </div>
+          <div class="flex flex-wrap gap-3 p-fluid mb-1">
+            <div class="flex-auto">
+              <label style="font-size: 12px;" class="font-bold block" for="service-price">SERVICE PRICE</label>
+              <p-inputNumber [autofocus]="false" id="service-price" [style]="{'border-radius':'0px','height': '12px','font-size': '12px'}"
+               placeholder="SERVICE PRICE" inputId="currency-us" mode="currency" currency="PKR" locale="en-US"> </p-inputNumber>
+            </div>
+          </div>
+          <div class="flex flex-wrap  p-fluid">
+            <div class="flex-auto">
+              <p style="font-size: 12px;" class="mt-2" for="job-salary">SERVICE DESCRIPTION</p>
+              <textarea  style="width: 100%; margin-top:-12px; border: 1px solid black;" rows="3" placeholder="Service Description" [maxLength]="100" [autocapitalize]="true" cols="30" pInputTextarea ></textarea>
+            </div>
+          </div>
+          <h6 class="text-muted" style="font-size: 12px;">Service Category</h6>
+          <div class="card gap-1 mt-1 p-3" style="border: 1px solid black;">
+            <p-checkbox name="parlourcategory" [disabled]="true"  value="parlour" label="Parlour"></p-checkbox>
+            <p-checkbox name="parlourcategory"  value="saloon" label="Saloon"></p-checkbox>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <p class="text-muted text-center" style="font-size: 12px;">PLEASE, CHOOSE SERVICE RELATED 2 PICTURES</p>
+          <div class="card flex justify-content-center">
+            <p-toast></p-toast>
+            <p-fileUpload name="files[]" [chooseStyleClass]="'custom-choose-btn'" [chooseLabel]="'SERIVCE PICTURES'" [fileLimit]="2" [showUploadButton]="false" [showCancelButton]="true"  (onUpload)="onUpload($event)" [multiple]="true" accept="image/*" [maxFileSize]="1000000">
+                <ng-template pTemplate="content">
+                    <ul *ngIf="uploadedFiles.length">
+                        <li *ngFor="let file of uploadedFiles">{{ file.name }} - {{ file.size }} bytes</li>
+                    </ul>
+                </ng-template>
+            </p-fileUpload>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center mt-3">
+          <p-button [style]="{'height': '15px'}" label="ADD SERVICE" size="small" [loading]="loading" (onClick)="load()"></p-button>
+        </div>
+      </div>
+    </div>
+  </p-dialog>
+</div>

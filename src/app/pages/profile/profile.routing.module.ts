@@ -6,6 +6,9 @@ import { JobsComponent } from './jobs/jobs.component';
 import { ServicesComponent } from './services/services.component';
 import { ProfileInfoComponent } from './profile-info/profile-info.component';
 import { JobsResolver } from 'src/app/resolver/jobs.resolver';
+import { ViewEncapsulation } from '@angular/compiler';
+import { ViewProfileComponent } from './view-profile/view-profile.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 
 const routes: Routes = [
@@ -16,8 +19,15 @@ const routes: Routes = [
                       {
                         path: '',
                         component: ProfileInfoComponent
-                      }
-                    ,
+                      },
+                    {
+                      path: 'view',
+                      component: ViewProfileComponent
+                    },
+                    {
+                      path: 'edit',
+                      component: EditProfileComponent
+                    },
                     {
                       path: 'jobs',
                       component: JobsComponent,

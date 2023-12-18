@@ -3,6 +3,8 @@ import { ConfirmDialog } from 'primeng/confirmdialog';
 import { ConfirmationComponent } from '../confirmation/confirmation.component';
 import { JobFirebaseService } from 'src/app/service/job.firebase.service';
 import { ActivatedRoute } from '@angular/router';
+import { AddServiceComponent } from '../add-service/add-service.component';
+import { AddJobComponent } from '../add-job/add-job.component';
 
 @Component({
   selector: 'app-table',
@@ -20,6 +22,9 @@ export class TableComponent implements OnInit{
   @Output() viewRecord = new EventEmitter();
   @Output() updateRecord = new EventEmitter();
   @Output() deleteRecord = new EventEmitter();
+
+  @ViewChild(AddServiceComponent) addServiceComponent ?: AddServiceComponent;
+  @ViewChild(AddJobComponent) addJobComponent ?: AddJobComponent;
 
 
   first = 0;
@@ -81,6 +86,14 @@ export class TableComponent implements OnInit{
   deleteCurrentRecords(record : any){
     this.deleteRecord.emit(record);
   }
+  
 
+  showAddServiceDialog() {
+      this.addServiceComponent?.toogleDialog();
+  }
+
+  showJobDialog() {
+    this.addJobComponent?.toogleDialog();
+   }
 
 }

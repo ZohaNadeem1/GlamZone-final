@@ -26,6 +26,13 @@ import { ToastModule } from 'primeng/toast';
 import { ParloursModule } from '../parlours/parlours.module';
 import { TagModule } from 'primeng/tag';
 import { JobsResolver } from 'src/app/resolver/jobs.resolver';
+import { AddServiceComponent } from 'src/app/components/add-service/add-service.component';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { CheckboxModule } from 'primeng/checkbox';
+import { FileUploadModule } from 'primeng/fileupload';
+import { CalendarModule } from 'primeng/calendar';
+import { AddJobComponent } from 'src/app/components/add-job/add-job.component';
+import { ViewProfileComponent } from './view-profile/view-profile.component';
 
 @NgModule({
   imports: [
@@ -41,13 +48,17 @@ import { JobsResolver } from 'src/app/resolver/jobs.resolver';
     AvatarGroupModule,
     ChartModule,
     ToastModule,
+    InputNumberModule,
     ConfirmDialogModule,
     ParloursModule,
-    TagModule
+    TagModule,
+    CalendarModule,
+    CheckboxModule,
+    FileUploadModule
   ],
-  declarations: [ProfileComponent,ProfileInfoComponent, ProfileSideComponent, ServicesComponent, 
+  declarations: [ProfileComponent,ProfileInfoComponent, ProfileSideComponent, ServicesComponent, ViewProfileComponent,
                  JobsComponent, TableComponent, DialogBoxComponent, DashboardPieChartComponent, DashboardMultiAxisComponent,
-                 DashboardPolarComponent, ConfirmationComponent],
+                 DashboardPolarComponent, ConfirmationComponent, AddJobComponent, AddServiceComponent],
   providers:    [ConfirmationService, MessageService, JobsResolver]
 
 })

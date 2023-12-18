@@ -32,6 +32,7 @@ export class DialogBoxComponent implements OnInit {
      this.title = this.viewDetails ? 'View Service Details' : 'Update Service';
      this.cdr.detectChanges();
    }
+   
    load() {
     this.loading = true;
 
