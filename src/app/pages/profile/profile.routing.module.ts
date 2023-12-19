@@ -8,6 +8,7 @@ import { ProfileInfoComponent } from './profile-info/profile-info.component';
 import { JobsResolver } from 'src/app/resolver/jobs.resolver';
 import { ViewProfileComponent } from './view-profile/view-profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { EditParlourComponent } from './edit-parlour/edit-parlour.component';
 
 
 const routes: Routes = [
@@ -37,6 +38,10 @@ const routes: Routes = [
                     {
                       path: 'services',
                       component: ServicesComponent
+                    },
+                    {
+                      path: 'parlour/edit/:id',
+                      component: EditParlourComponent
                     }
               ],
               resolve: {

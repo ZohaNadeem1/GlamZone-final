@@ -7,16 +7,15 @@ interface UploadEvent {
 }
 
 @Component({
-  selector: 'app-edit-profile',
-  templateUrl: './edit-profile.component.html',
-  styleUrls: ['./edit-profile.component.css']
+  selector: 'app-edit-parlour',
+  templateUrl: './edit-parlour.component.html',
+  styleUrls: ['./edit-parlour.component.css']
 })
-export class EditProfileComponent implements OnInit {
-
+export class EditParlourComponent implements OnInit {
   loading : boolean = false;
-  
+
   constructor(private messageService: MessageService) {}
-  
+
   ngOnInit() {
   }
 
@@ -37,5 +36,6 @@ export class EditProfileComponent implements OnInit {
 
       this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
   }
+
 
 }
