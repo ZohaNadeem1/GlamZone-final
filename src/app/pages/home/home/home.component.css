@@ -5,9 +5,10 @@ img{
   
     
 }
-#Welcome{
-    color: darkorange;
+.Welcome{
+    color: #1E2C30;
     font-weight: bold;
+    font-size: larger;
 }
 #heading{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -15,16 +16,18 @@ img{
 } 
 div #slogan{
    text-align: center;
-   border: 2px solid black;
+   /* border: 2px solid black; */
    width: 450px;
+   height: 250px ;
+   padding: 5%;
    margin-top: 00px;
   
 }
 #banner{
-    background: linear-gradient(to right, #A2B3BF 60%, #1E2C30 50%);
+    background: linear-gradient(to right, #d8e0e5 60%, #1E2C30 50%);
 }
-#image{
-border-right: 5px solid white;
-position: sticky;
+/* #image{
+border: 5px solid white;
+padding: 5px;
 
-}
+} */
