@@ -5,6 +5,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { JobsComponent } from './jobs/jobs.component';
 import { ServicesComponent } from './services/services.component';
 import { ProfileInfoComponent } from './profile-info/profile-info.component';
+import { JobsResolver } from 'src/app/resolver/jobs.resolver';
+import { ViewProfileComponent } from './view-profile/view-profile.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { EditParlourComponent } from './edit-parlour/edit-parlour.component';
 
 
 const routes: Routes = [
@@ -15,15 +19,29 @@ const routes: Routes = [
                       {
                         path: '',
                         component: ProfileInfoComponent
-                      }
-                    ,
+                      },
+                    {
+                      path: 'view',
+                      component: ViewProfileComponent
+                    },
+                    {
+                      path: 'edit/:id',
+                      component: EditProfileComponent
+                    },
                     {
                       path: 'jobs',
-                      component: JobsComponent
+                      component: JobsComponent,
+                      resolve: {
+                           jobsData : JobsResolver
+                      }
                     },
                     {
                       path: 'services',
                       component: ServicesComponent
+                    },
+                    {
+                      path: 'parlour/edit/:id',
+                      component: EditParlourComponent
                     }
               ],
               resolve: {

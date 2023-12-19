@@ -10,7 +10,8 @@ import { SharedService } from 'src/app/shared/Shared.service';
 })
 export class DialogBoxComponent implements OnInit {
   
-  @Input() viewDetails ?: boolean = false;
+  @Input() viewDetails ?: boolean;
+  
   visible = false;
   loading: boolean = false;
   title ?: string;
@@ -19,7 +20,7 @@ export class DialogBoxComponent implements OnInit {
   }
   
   ngOnInit() {
-    this.title = this.viewDetails ? 'View Service Details' : 'Update Service';
+  
   }
   save(severity: string) {
     this.messageService.add({ severity: severity, summary: 'Success', detail: 'Data Saved' });
@@ -27,8 +28,11 @@ export class DialogBoxComponent implements OnInit {
 
    toogleDialog(){
      this.visible = !this.visible;
+     this.viewDetails;
+     this.title = this.viewDetails ? 'View Service Details' : 'Update Service';
      this.cdr.detectChanges();
    }
+   
    load() {
     this.loading = true;
 

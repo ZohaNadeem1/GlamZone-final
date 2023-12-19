@@ -1,0 +1,70 @@
+<div class="container bg-white">
+  <div class="row p-3">
+    <div class="col-md-12">
+      <h6 class="text-muted">PERSONAL PROFILE DETAIL</h6>
+      <p class="text-muted">These details are related with your personal account information</p>
+      <div class="flex justify-content-center bg-light p-3">
+        <div class="flex flex-column gap-2">
+          <label style="font-size: 12px;" for="firstname">First Name</label>
+          <input pInputText placeholder="First Name" id='firstname' aria-describedby="firstname-help" />
+        </div>
+        <div class="flex flex-column gap-2">
+          <label style="font-size: 12px;" for="lastname">Last Name</label>
+          <input pInputText placeholder="Last Name" id='lastname' aria-describedby="lastname-help" />
+        </div>
+        <div class="flex flex-column gap-2">
+          <label style="font-size: 12px;" for="contact">Contact</label>
+          <p-inputNumber [ngStyle]="{'width':'100%', 'height': '22px'}" inputId="withoutgrouping"
+            placeholder="Contact Number" id="contact" mode="decimal" [useGrouping]="false"> </p-inputNumber>
+        </div>
+        <div class="flex flex-column gap-2">
+          <label style="font-size: 12px;" for="email">Email</label>
+          <input pInputText placeholder="Email address e.g zoha@gmail.com" id='email' aria-describedby="email-help" />
+        </div>
+        <div class="flex mt-3">
+          <p-button [style]="{'height': '10px'}" size="small" label="APPLY CHANGES" [loading]="loading"
+            (onClick)="load()"></p-button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row p-3">
+    <div class="col-md-12">
+      <h6 class="text-muted pt-1">PERSONAL PROFILE PICTURE</h6>
+      <p class="text-muted">You can update your profile picture</p>
+      <div class="flex justify-content-center bg-light p-3">
+        <div class="row p-3  bg-light">
+          <div class="col-md-6">
+            <div class="flex justify-content-center bg-light p-3">
+              <div class="flex justify-content-center bg-white p-3">
+                <div class="flex flex-column gap-2 text-center text-danger">
+                  <p class="" style="font-size: 12px;" for="current-picture">CURRENT PROFILE</p>
+                  <img width="10%" src="../../../../assets/imgs/profile-placeholder.png" class="img-fluid" width="50%"
+                    height="250px" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card d-flex justify-content-center mt-3">
+              <p-toast></p-toast>
+              <p-fileUpload name="demo[]" [chooseLabel]="'CHOOSE NEW PROFILE PICTURE'" [showUploadButton]="false"
+                (onUpload)="onUpload($event)" [multiple]="false" accept="image/*" [maxFileSize]="1000000">
+                <ng-template pTemplate="content">
+                  <ul *ngIf="uploadedFiles.length">
+                    <li *ngFor="let file of uploadedFiles">{{ file.name }}</li>
+                  </ul>
+                </ng-template>
+              </p-fileUpload>
+            </div>
+          </div>
+          <div class="flex mt-3">
+            <p-button [style]="{'height': '10px'}"  label="UPDATE PROFILE PICTURE" [loading]="loading"
+              (onClick)="load()"></p-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

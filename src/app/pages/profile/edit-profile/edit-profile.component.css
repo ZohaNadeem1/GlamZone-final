@@ -1,0 +1,12 @@
+input[pInputText], input[placeholder], input[inputmode="decimal"], ::ng-deep p-inputNumber  input[placeholder] {
+    height: 22px;
+    width: 100%;
+    padding: 9px;
+    font-size: 12px;
+}
+
+:host ::ng-deep p-inputNumber span{
+    padding: 0px;
+    height: 22px;
+    width: 100%;
+}

@@ -1,0 +1,45 @@
+input[pInputText]{
+    width: 100%;
+}
+
+input[placeholder], textarea[placeholder]{
+    font-size: 12px;
+    padding: 5px;
+}
+
+:host ::ng-deep .p-input-number-input{
+    height: 10px;
+}
+
+
+::ng-deep .p-calendar input[placeholder] {
+    font-size: 12px;
+}
+
+::ng-deep .p-inputnumber-input, .p-inputnumber-input:hover , 
+.p-inputnumber-input:focus  {
+    border-radius: 0px !important;
+    height: 30px;
+    width: 100%;
+    outline: none;
+    border: 1px solid black !important;
+    border-radius: 0% !important;
+    box-shadow: none;
+}
+
+::ng-deep .p-calendar input, .p-calendar input:focus, .p-calendar input:hover {
+    height: 10px !important;
+    outline: none;
+    border: 1px solid black !important;
+    border-radius: 0% !important;
+    box-shadow: none;
+}
+
+::ng-deep .p-button-label{
+      font-size: 12px;
+      font-weight: normal !important;
+} 
+
+::ng-deep .p-checkbox label {
+    font-size: 12px !important;
+}

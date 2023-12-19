@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <app-table (deleteRecord)="deleteCurrentRecord($event)" (updateRecord)="updateCurrentRecord($event)" (viewRecord)="viewCurrentRecord($event)" [columns]="jobsTable"></app-table>
+        <app-table [viewType]="'jobs'" (deleteRecord)="deleteCurrentRecord($event)" (updateRecord)="updateCurrentRecord($event)" (viewRecord)="viewCurrentRecord($event)" [columns]="jobsTable"></app-table>
     </div>
 </div>
 <app-confirmation></app-confirmation>

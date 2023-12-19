@@ -25,6 +25,16 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { ParloursModule } from '../parlours/parlours.module';
 import { TagModule } from 'primeng/tag';
+import { JobsResolver } from 'src/app/resolver/jobs.resolver';
+import { AddServiceComponent } from 'src/app/components/add-service/add-service.component';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { CheckboxModule } from 'primeng/checkbox';
+import { FileUploadModule } from 'primeng/fileupload';
+import { CalendarModule } from 'primeng/calendar';
+import { AddJobComponent } from 'src/app/components/add-job/add-job.component';
+import { ViewProfileComponent } from './view-profile/view-profile.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { EditParlourComponent } from './edit-parlour/edit-parlour.component';
 
 @NgModule({
   imports: [
@@ -40,14 +50,18 @@ import { TagModule } from 'primeng/tag';
     AvatarGroupModule,
     ChartModule,
     ToastModule,
+    InputNumberModule,
     ConfirmDialogModule,
     ParloursModule,
-    TagModule
+    TagModule,
+    CalendarModule,
+    CheckboxModule,
+    FileUploadModule
   ],
-  declarations: [ProfileComponent,ProfileInfoComponent, ProfileSideComponent, ServicesComponent, 
-                 JobsComponent, TableComponent, DialogBoxComponent, DashboardPieChartComponent, DashboardMultiAxisComponent,
-                 DashboardPolarComponent, ConfirmationComponent],
-  providers:    [ConfirmationService, MessageService]
+  declarations: [ProfileComponent,ProfileInfoComponent, ProfileSideComponent, ServicesComponent, ViewProfileComponent,
+                 EditParlourComponent,EditProfileComponent,JobsComponent, TableComponent, DialogBoxComponent, DashboardPieChartComponent, DashboardMultiAxisComponent,
+                 DashboardPolarComponent, ConfirmationComponent, AddJobComponent, AddServiceComponent],
+  providers:    [ConfirmationService, MessageService, JobsResolver]
 
 })
 export class ProfileModule { }
